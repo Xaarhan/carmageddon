@@ -7,7 +7,9 @@ public class SpawnPoint : MonoBehaviour
 
 
    
+    public void reset() {
 
+    }
 
     public bool isFree {
         get {

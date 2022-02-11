@@ -18,6 +18,10 @@ public class SpawnPointHelper : MonoBehaviour
         }
     }
 
+    public void reset() {
+        _trigget_count = 0;
+    }
+
 
     private int _trigget_count;
 }

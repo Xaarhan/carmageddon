@@ -2443,7 +2443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60.5, y: -5.9000244}
+  m_AnchoredPosition: {x: -74.63, y: -46.59}
   m_SizeDelta: {x: 36.179993, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1183622887
@@ -3632,8 +3632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_lifes_count: 0
   inventory: {fileID: 1616317516}
-  total_bots: 10
-  max_bots_on_arena: 2
+  total_bots: 5
+  max_bots_on_arena: 3
   spawnPoints: []
   defBot: {fileID: 2129830570}
   defPlayer: {fileID: 1966908962}

@@ -20,19 +20,20 @@ public class GameCommander : MonoBehaviour
              showWin();
         }
 
+        if (_spawn_delay >= 0) {
+            _spawn_delay -= Main.delta;
+        }
 
         if ( _player == null || _player.isDead  ) {
             if (_player_lifes <= player_lifes_count) {
-                spawnPlayer();
+                if ( _spawn_delay <= 0 ) spawnPlayer();
             } else {
                 showLoose();
             }
         }
 
 
-        if ( _spawn_delay >= 0 ) {
-             _spawn_delay -= Main.delta;
-        }
+        
 
 
         if ( _spawn_delay <= 0 &&
@@ -111,6 +112,7 @@ public class GameCommander : MonoBehaviour
         _player_lifes++;
         camera.Follow = _player.transform;
         camera.LookAt =_player.transform;
+        _spawn_delay = 1000;
     }
 
     private void botsSetTarget(BaseMob mob) {
@@ -139,10 +141,14 @@ public class GameCommander : MonoBehaviour
         for ( int  i = 0; i < _bots.Count; i++ ) {
               Main.removeObject(_bots[i].gameObject);
         }
+
+        for (int i = 0; i < spawnPoints.Length; i++) {
+             spawnPoints[i].reset();
+        }
         _bots = new List<BaseBot>();
         _stop = false;
-        spawnPlayer();
         _spawn_delay = 100;
+        
     }
 
 
